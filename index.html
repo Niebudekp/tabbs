@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tab_box">
+        <button class="tab_btn active">Home</button>
+        <button class="tab_btn">About</button>
+        <button class="tab_btn">Blogs</button>
+        <button class="tab_btn">Contant us</button>
+        <div class="line"></div>
+      </div>
+      <div class="content_box">
+        <div class="content active">
+          <h2>Home</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quod
+            laboriosam possimus maiores quos vero, harum cumque, commodi natus
+            eveniet dignissimos velit, expedita unde magnam architecto delectus
+            tenetur facilis? Quasi.
+          </p>
+        </div>
+        <div class="content">
+          <h2>About</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quod
+            laboriosam possimus maiores quos vero, harum cumque, commodi natus
+            eveniet dignissimos velit, expedita unde magnam architecto delectus
+            tenetur facilis? Quasi.
+          </p>
+        </div>
+        <div class="content">
+          <h2>Blogs</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quod
+            laboriosam possimus maiores quos vero, harum cumque, commodi natus
+            eveniet dignissimos velit, expedita unde magnam architecto delectus
+            tenetur facilis? Quasi.
+          </p>
+        </div>
+        <div class="content">
+          <h2>Contant us</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quod
+            laboriosam possimus maiores quos vero, harum cumque, commodi natus
+            eveniet dignissimos velit, expedita unde magnam architecto delectus
+            tenetur facilis? Quasi.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tabs = document.querySelectorAll(".tab_btn");
+      const all_content = document.querySelectorAll(".content");
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", (e) => {
+          tabs.forEach((tab) => {
+            tab.classList.remove("active");
+          });
+          tab.classList.add("active");
+          let line = document.querySelector(".line");
+          line.style.width = e.target.offsetWidth + "px";
+          line.style.left = e.target.offsetLeft + "px";
+
+          all_content.forEach(content=>{content.classList.remove('active')});
+          all_content[index].classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
